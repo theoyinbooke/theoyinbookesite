@@ -105,7 +105,7 @@ function Nav() {
 function ThemeToggle() {
   const [dark, setDark] = useState(() => {
     const saved = localStorage.getItem('oo-theme');
-    return saved === 'dark';
+    return saved !== 'light';
   });
 
   useEffect(() => {
