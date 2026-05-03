@@ -1,4 +1,56 @@
-// Writing.jsx — Writing & Speaking page
+// Writing.jsx - External post embeds
+
+const POSTS = [
+  {
+    title: 'Small Models, Big Moment: Why 2026 Is the Year Local AI Gets Real',
+    description: 'Open-source LLMs are no longer a compromise. They are the opportunity.',
+    source: 'Substack',
+    url: 'https://substack.com/home/post/p-190062512',
+    image: 'https://substackcdn.com/image/fetch/$s_!i5KF!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Ftheoyinbooke.substack.com%2Ftwitter%2Fsubscribe-card.jpg%3Fv%3D-1290156482%26version%3D9',
+  },
+  {
+    title: 'Run Large Language Models on Your Local Machine - No Coding Experience Required',
+    description: 'You do not need a computer science degree to run advanced AI. You just need the right guidance and the willingness to learn.',
+    source: 'LinkedIn',
+    url: 'https://www.linkedin.com/pulse/run-large-language-models-your-local-machine-coding-oyinbooke-kndmc',
+    image: 'https://media.licdn.com/dms/image/v2/D5612AQEKBpeRSWP1Vg/article-cover_image-shrink_720_1280/B56ZWnRybTHQAI-/0/1742268213886?e=2147483647&v=beta&t=RY-iQOmDLr0bFpoKPapiAmEWUQQZY92NVMr_p_f5r28',
+  },
+  {
+    title: 'Run it.',
+    description: 'Your first local AI model is 5 minutes away. The only thing between you and it is the decision to open a terminal.',
+    source: 'LinkedIn',
+    url: 'https://www.linkedin.com/pulse/run-olanrewaju-oyinbooke-yjjac',
+    image: 'https://media.licdn.com/dms/image/v2/D5612AQGB8yvRkTqaXQ/article-cover_image-shrink_720_1280/B56Z1VDS7NKcAI-/0/1775248421122?e=2147483647&v=beta&t=kPY4ODA4btaAFUF2rv3g6gMP_8xVpdOYDf3YtRGjUP8',
+  },
+  {
+    title: 'Ollama Was the Start. This Is the Next Step',
+    description: 'Your local AI toolkit just got bigger. A practical next step for people learning to run and use AI locally.',
+    source: 'LinkedIn',
+    url: 'https://www.linkedin.com/pulse/ollama-start-next-step-olanrewaju-oyinbooke-pdhlc',
+    image: 'https://media.licdn.com/dms/image/v2/D5612AQGaQlZOK20n9Q/article-cover_image-shrink_720_1280/B56Z1r10soIYAI-/0/1775630765731?e=2147483647&v=beta&t=JWWpMkJ6lUwaw7yOATwkf3DLd7vy869kMVHB7efrTDo',
+  },
+  {
+    title: 'BRINGING THE SKILLS CLOSER',
+    description: 'A reflection on access, learning, and bringing professional skills closer to people who need them.',
+    source: 'LinkedIn',
+    url: 'https://www.linkedin.com/pulse/bringing-skills-closer-oyinbooke-olanrewaju-charles',
+    image: 'https://static.licdn.com/scds/common/u/images/email/artdeco/logos/96/linkedin-bug-color.png',
+  },
+  {
+    title: 'Is My Country (Nigeria) Ready for the Fourth Generation of the Industrial Revolution?',
+    description: 'Questions about readiness, systems, and the future of work in Nigeria through the lens of industrial transformation.',
+    source: 'LinkedIn',
+    url: 'https://www.linkedin.com/pulse/my-country-nigeria-ready-fourth-generation-industrial-oyinbooke',
+    image: 'https://static.licdn.com/scds/common/u/images/email/artdeco/logos/96/linkedin-bug-color.png',
+  },
+  {
+    title: 'My Journey to Relevance',
+    description: 'A personal reflection on uncertainty, growth, and finding direction through learning and persistence.',
+    source: 'LinkedIn',
+    url: 'https://www.linkedin.com/pulse/my-journey-relevance-oyinbooke-olanrewaju-charles-1',
+    image: 'https://media.licdn.com/dms/image/v2/C4E12AQH4-CvxgKcE8Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1520178212035?e=2147483647&v=beta&t=mg-o7w1Hvad93UX7n_FYaHcuw9EpiZss6kWvk9-7vDw',
+  },
+];
 
 function Writing() {
   return (
@@ -6,146 +58,52 @@ function Writing() {
       <section className="section">
         <div className="container">
           <Reveal>
-            <span className="mono" style={{ color: 'var(--accent)', display: 'block', marginBottom: '1rem' }}>Writing & Speaking</span>
-            <h1 className="display-lg" style={{ marginBottom: '0.5rem' }}>Ideas worth sharing</h1>
-            <p className="body-lg" style={{ maxWidth: 580, marginBottom: '3rem' }}>
-              I write about AI, automation, local-first tooling, and the craft of learning.
-              I speak about making AI accessible — especially in Africa.
+            <span className="mono" style={{ color: 'var(--accent)', display: 'block', marginBottom: '1rem' }}>Writing</span>
+            <h1 className="display-lg" style={{ marginBottom: '0.5rem' }}>Posts from around the web</h1>
+            <p className="body-lg" style={{ maxWidth: 620, marginBottom: '3rem' }}>
+              A directory of essays and articles I publish across Substack, LinkedIn, Medium,
+              and other platforms.
             </p>
           </Reveal>
 
-          {/* Featured article */}
-          <Reveal delay={0.1}>
-            <div className="featured-article">
-              <div className="featured-article-badge">
-                <span className="mono" style={{ color: 'var(--accent)', fontSize: '0.75rem' }}>Latest</span>
-              </div>
-              <h2 className="display-md" style={{ marginBottom: '0.75rem' }}>Run it.</h2>
-              <p className="body-lg" style={{ maxWidth: 550, marginBottom: '1.5rem' }}>
-                Your first local AI model is 5 minutes away. The only thing between you and it
-                is the decision to open a terminal.
-              </p>
-              <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-                <span className="tech-tag">Ollama</span>
-                <span className="tech-tag">Local LLMs</span>
-                <span className="tech-tag">Getting Started</span>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Newsletter */}
-          <Reveal delay={0.15}>
-            <div style={{ margin: '3rem 0' }}>
-              <h2 className="display-md" style={{ marginBottom: '1.5rem' }}>Automation with TheOyinbooke</h2>
-              <div className="writing-grid">
-                {[
-                  { title: 'Skilling up in the age of AI', tags: ['Meta-learning', 'Emerging Markets'], excerpt: 'Skilling up is a skill in itself and has a lot more to do with you than the tool or technology you are learning.' },
-                  { title: 'Local LLMs on modest hardware', tags: ['Ollama', 'LM Studio'], excerpt: 'Why running AI locally matters more in Lagos and Accra than in San Francisco.' },
-                  { title: 'The anti-theory position', tags: ['Building', 'Craft'], excerpt: 'Breakthrough doesn\'t come from one clean moment of clarity. It comes from showing up to the confusion again and again.' },
-                ].map((article, i) => (
-                  <Reveal key={i} delay={0.1 + i * 0.08}>
-                    <div className="article-card">
-                      <div style={{ display: 'flex', gap: 8, marginBottom: 10, flexWrap: 'wrap' }}>
-                        {article.tags.map(t => <span key={t} className="tech-tag" style={{ fontSize: '0.7rem' }}>{t}</span>)}
-                      </div>
-                      <h3 style={{ fontFamily: 'var(--display)', fontSize: '1.2rem', fontWeight: 600, marginBottom: 8 }}>{article.title}</h3>
-                      <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.55 }}>{article.excerpt}</p>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* YouTube */}
-      <section className="section" style={{ background: 'var(--bg-alt)' }}>
-        <div className="container">
-          <Reveal>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
-              <div>
-                <span className="mono" style={{ color: 'var(--sage)', display: 'block', marginBottom: '0.5rem' }}>YouTube</span>
-                <h2 className="display-md">@TheOyinbooke</h2>
-                <p style={{ color: 'var(--text-secondary)', marginTop: 6 }}>16,000 subscribers</p>
-              </div>
-              <a href="https://youtube.com/@TheOyinbooke" target="_blank" rel="noopener" className="btn-secondary">
-                Visit Channel
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-              </a>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <div className="youtube-card">
-              <div className="youtube-placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="var(--accent)" opacity="0.6"><path d="M8 5v14l11-7z"/></svg>
-                <p className="mono" style={{ marginTop: 12, color: 'var(--text-secondary)' }}>Learn AI in 2026 — Series trailer</p>
-              </div>
-              <div className="youtube-info">
-                <h3 style={{ fontFamily: 'var(--display)', fontSize: '1.3rem', fontWeight: 600, marginBottom: 8 }}>Learn AI in 2026</h3>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1rem' }}>
-                  A 5-series program moving from browser-based AI tools through local code editors
-                  to running your own models. Confidence comes from doing, not watching.
-                </p>
-                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                  {['Series 0: Intro', 'Series 1: Browser AI', 'Series 2: Code Editors', 'Series 3: Local LLMs', 'Series 4: Your Workflow'].map(s => (
-                    <span key={s} className="tech-tag">{s}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Speaking */}
-      <section className="section">
-        <div className="container">
-          <Reveal>
-            <span className="mono" style={{ color: 'var(--accent)', display: 'block', marginBottom: '1rem' }}>Speaking</span>
-            <h2 className="display-md" style={{ marginBottom: '2.5rem' }}>Talks & Panels</h2>
-          </Reveal>
-
-          <div className="speaking-list">
-            {[
-              { year: '2026', title: 'AI Should Not Scare You', event: 'AXA Forge 2026', type: 'Keynote' },
-              { year: '2026', title: 'Are AI Agents Moving Faster Than We Can Govern Them?', event: 'AI Governance Panel', type: 'Panel' },
-              { year: '2025', title: 'AI Redefining Ubuntu: I Am because We Are', event: 'NSBE 50, Chicago', type: 'Flash Talk' },
-              { year: '2025', title: 'AI Adoption and Cybersecurity', event: 'North America MCT Summit', type: 'Panel' },
-              { year: '2021', title: 'First External Community Talk', event: 'MCT West Africa Summit', type: 'Session' },
-            ].map((talk, i) => (
-              <Reveal key={i} delay={i * 0.06}>
-                <div className="speaking-item">
-                  <span className="mono speaking-year">{talk.year}</span>
-                  <div className="speaking-details">
-                    <h3 style={{ fontFamily: 'var(--display)', fontSize: '1.1rem', fontWeight: 600 }}>{talk.title}</h3>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: 4 }}>{talk.event}</p>
-                  </div>
-                  <span className="tech-tag">{talk.type}</span>
-                </div>
+          <div className="post-grid">
+            {POSTS.map((post, index) => (
+              <Reveal key={post.url} delay={index * 0.06}>
+                <PostEmbed post={post} />
               </Reveal>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Podcast */}
-      <section className="section" style={{ background: 'var(--bg-alt)' }}>
-        <div className="container">
-          <Reveal>
-            <div className="podcast-card">
-              <span className="mono" style={{ color: 'var(--sage)' }}>Podcast</span>
-              <h2 className="display-md" style={{ margin: '0.75rem 0 0.5rem' }}>In the City for the Nations</h2>
-              <p className="body-lg" style={{ maxWidth: 550 }}>
-                Interviews with people from different religious and cultural backgrounds
-                who have come to faith in Christ. Hosted at Hillcrest Community Church, Little Rock.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </main>
+  );
+}
+
+function PostEmbed({ post }) {
+  return (
+    <a className="post-embed" href={post.url} target="_blank" rel="noopener">
+      <div className="post-thumb" data-source={post.source}>
+        {post.image && (
+          <img
+            src={post.image}
+            alt=""
+            loading="lazy"
+            onError={(event) => {
+              event.currentTarget.style.display = 'none';
+              event.currentTarget.parentElement.dataset.fallback = 'true';
+            }}
+          />
+        )}
+      </div>
+      <div className="post-body">
+        <div className="post-meta">
+          <span>{post.source}</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <h2>{post.title}</h2>
+        <p>{post.description}</p>
+      </div>
+    </a>
   );
 }
 

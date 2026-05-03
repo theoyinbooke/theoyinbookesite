@@ -3,7 +3,7 @@
 function Work() {
   const [filter, setFilter] = React.useState('all');
 
-  const cats = ['all', 'shipped', 'building', 'community'];
+  const cats = ['all', 'shipped', 'building'];
   const filtered = Object.entries(PROJECTS).filter(([_, p]) => filter === 'all' || p.category === filter);
 
   return (
@@ -67,6 +67,37 @@ function WorkCard({ slug, project, index }) {
         </div>
       </button>
     </Reveal>
+  );
+}
+
+// ─── Project placeholder visual ─────────────
+function ProjectPlaceholder({ project, large }) {
+  const shapes = React.useMemo(() => {
+    const seed = project.title.length;
+    const arr = [];
+    const count = large ? 5 : 3;
+    for (let i = 0; i < count; i++) {
+      arr.push({
+        x: 15 + ((seed * (i + 1) * 37) % 70),
+        y: 15 + ((seed * (i + 1) * 53) % 60),
+        size: 20 + ((seed * (i + 2) * 17) % 40),
+        type: i % 3,
+      });
+    }
+    return arr;
+  }, [project.title, large]);
+
+  return (
+    <div className="project-placeholder" style={{ '--ph-color': project.color }}>
+      <svg viewBox="0 0 100 80" className="placeholder-svg" aria-hidden="true">
+        {shapes.map((s, i) => {
+          if (s.type === 0) return <circle key={i} cx={s.x} cy={s.y} r={s.size / 3} fill={project.color} opacity="0.3" />;
+          if (s.type === 1) return <rect key={i} x={s.x} y={s.y} width={s.size} height={s.size * 0.6} rx="3" fill={project.color} opacity="0.2" />;
+          return <rect key={i} x={s.x} y={s.y} width={s.size * 0.8} height={s.size * 0.8} rx="50" fill={project.color} opacity="0.15" />;
+        })}
+      </svg>
+      <span className="placeholder-label mono">{project.platform}</span>
+    </div>
   );
 }
 
@@ -209,4 +240,4 @@ function NextProject({ currentSlug }) {
   );
 }
 
-Object.assign(window, { Work, ProjectDetail });
+Object.assign(window, { Work, ProjectDetail, ProjectPlaceholder });

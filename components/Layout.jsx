@@ -50,7 +50,7 @@ function Nav() {
     { id: 'home', label: 'Home' },
     { id: 'work', label: 'Work' },
     { id: 'writing', label: 'Writing' },
-    { id: 'foundation', label: 'Foundation' },
+    { id: 'speaking', label: 'Speaking' },
     { id: 'about', label: 'About' },
   ];
 
@@ -140,7 +140,7 @@ function Footer() {
           <div className="footer-links">
             <div className="footer-col">
               <span className="mono" style={{ color: 'var(--text-secondary)', marginBottom: 12, display: 'block' }}>Navigate</span>
-              {['home','work','writing','foundation','about'].map(p => (
+              {['home','work','writing','speaking','about'].map(p => (
                 <button key={p} className="footer-link" onClick={() => navigate(p)}>
                   {p.charAt(0).toUpperCase() + p.slice(1)}
                 </button>

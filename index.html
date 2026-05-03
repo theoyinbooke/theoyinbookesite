@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Olanrewaju Oyinbooke — Agentic Engineer</title>
   <meta name="description" content="Olanrewaju Oyinbooke is an Agentic Engineer and Operations Automation and AI Lead at Prime Eight Consulting. A Microsoft MVP and former Microsoft Senior Cloud Advocate, he builds privacy-first AI products, leads enterprise automation, and has upskilled hundreds of thousands of professionals across Africa in data analytics and AI.">
-  <meta name="keywords" content="Olanrewaju Oyinbooke, TheOyinbooke, Agentic Engineer, AI engineer, Microsoft MVP, cloud advocate, automation, data science, Swift developer, Azure, Prime Eight Consulting, Nigeria, Africa tech, Mylokai, orttaai, GoPakd, Screenmify, TheOyinbooke Foundation, DataFest Africa, agentic AI, AI agents">
+  <meta name="keywords" content="Olanrewaju Oyinbooke, TheOyinbooke, Agentic Engineer, AI engineer, Microsoft MVP, cloud advocate, automation, data science, Swift developer, Azure, Prime Eight Consulting, Nigeria, Africa tech, Mylokai, orttaai, GoPakd, soundAr, DataFest Africa, agentic AI, AI agents">
   <meta name="author" content="Olanrewaju Oyinbooke">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://theoyinbooke.com">
@@ -54,12 +54,6 @@
       { "@type": "Organization", "name": "Data Science Nigeria" },
       { "@type": "Organization", "name": "AXA Innovative Community" }
     ],
-    "founder": {
-      "@type": "Organization",
-      "name": "TheOyinbooke Foundation",
-      "url": "https://theoyinbookefoundation.com",
-      "description": "Holistic youth development program in Nigeria running cohorts across spiritual development, financial/career growth, emotional development, and discipleship/leadership."
-    },
     "url": "https://theoyinbooke.com",
     "sameAs": [
       "https://youtube.com/@TheOyinbooke",
@@ -80,14 +74,14 @@
   <div id="root"></div>
   <div class="noise-overlay"></div>
 
-  <script type="text/babel" src="components/Layout.jsx"></script>
-  <script type="text/babel" src="components/ProjectData.jsx"></script>
-  <script type="text/babel" src="components/Home.jsx"></script>
-  <script type="text/babel" src="components/Work.jsx"></script>
-  <script type="text/babel" src="components/Writing.jsx"></script>
-  <script type="text/babel" src="components/Foundation.jsx"></script>
-  <script type="text/babel" src="components/About.jsx"></script>
-  <script type="text/babel" src="components/Tweaks.jsx"></script>
+  <script type="text/babel" src="components/Layout.jsx?v=20260502g"></script>
+  <script type="text/babel" src="components/ProjectData.jsx?v=20260502g"></script>
+  <script type="text/babel" src="components/Home.jsx?v=20260502g"></script>
+  <script type="text/babel" src="components/Work.jsx?v=20260502g"></script>
+  <script type="text/babel" src="components/Writing.jsx?v=20260502g"></script>
+  <script type="text/babel" src="components/Speaking.jsx?v=20260502g"></script>
+  <script type="text/babel" src="components/About.jsx?v=20260502g"></script>
+  <script type="text/babel" src="components/Tweaks.jsx?v=20260502g"></script>
 
   <script type="text/babel">
     const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -101,13 +95,14 @@
 
     function App() {
       const { page, projectSlug } = useRoute();
+      const isHome = page === 'home' && !projectSlug;
 
       const renderPage = () => {
         switch (page) {
           case 'work':
             return projectSlug ? <ProjectDetail slug={projectSlug} /> : <Work />;
           case 'writing': return <Writing />;
-          case 'foundation': return <Foundation />;
+          case 'speaking': return <Speaking />;
           case 'about': return <About />;
           default: return <Home />;
         }
@@ -115,11 +110,11 @@
 
       return (
         <>
-          <Nav />
+          {!isHome && <Nav />}
           <PageTransition pageKey={page + (projectSlug || '')}>
             {renderPage()}
           </PageTransition>
-          <Footer />
+          {!isHome && <Footer />}
           <TweaksPanel />
         </>
       );

@@ -58,25 +58,6 @@ const PROJECTS = {
       'Real-time collaboration via Convex',
     ],
   },
-  screenmify: {
-    title: 'Screenmify',
-    tagline: 'Screen recorder + editor + AI studio',
-    description: 'Free, open-source Mac-native screen recorder and video editor with local AI built in. Recording, editing, transcription, and AI content generation in one app.',
-    status: 'In Development',
-    platform: 'macOS',
-    year: '2026',
-    category: 'building',
-    color: 'oklch(0.50 0.13 195)',
-    tech: ['Swift', 'SwiftUI', 'AVFoundation', 'ScreenCaptureKit', 'Metal', 'Whisper', 'llama.cpp'],
-    story: 'Screen Studio is beautiful but costly and has no editor. OBS is free but ugly. Loom sends everything to the cloud. Screenmify combines recording, editing, transcription, and AI content generation in a Mac-native app that runs entirely on your hardware.',
-    links: {},
-    features: [
-      'Native Mac screen recording with ScreenCaptureKit',
-      'Built-in video editor with timeline',
-      'AI content studio: auto-generate descriptions, blog drafts, threads',
-      'Local Whisper transcription',
-    ],
-  },
   soundar: {
     title: 'soundAr',
     tagline: 'Local speech model workbench',
@@ -96,63 +77,6 @@ const PROJECTS = {
       'GPU benchmark suite',
     ],
   },
-  foundation: {
-    title: 'TheOyinbooke Foundation',
-    tagline: 'Holistic youth development in Nigeria',
-    description: 'A development program for young beneficiaries in Nigeria, running cohorts across four pillars: spiritual development, financial/career growth, emotional development, and discipleship/leadership.',
-    status: 'Active',
-    platform: 'Web',
-    year: '2025',
-    category: 'community',
-    color: 'oklch(0.55 0.10 145)',
-    tech: ['Next.js', 'Convex', 'Clerk', 'MCP'],
-    story: 'The Foundation runs in cohorts with 16 sessions across four pillars. The platform tracks beneficiaries, mentorship, assessments, and support requests. Built on the same stack as the other products — because the Foundation deserves the same engineering rigor.',
-    links: { website: 'https://theoyinbookefoundation.com' },
-    features: [
-      'Cohort-based program management',
-      'Beneficiary development profiles',
-      'Session scheduling and attendance tracking',
-      'Support request and disbursement workflow',
-    ],
-  },
-  nationshub: {
-    title: 'Nations Hub',
-    tagline: 'Podcast production platform',
-    description: 'Custom platform for managing the "In the City for the Nations" podcast pipeline — from ideation through publication, with episode workspaces and team collaboration.',
-    status: 'Active',
-    platform: 'Web',
-    year: '2025',
-    category: 'community',
-    color: 'oklch(0.50 0.10 30)',
-    tech: ['Next.js 14', 'Convex', 'Clerk', 'shadcn/ui', 'MCP'],
-    story: 'Hosting a podcast at Hillcrest Community Church meant running it like a product, not a side project. Nations Hub manages the full pipeline from episode ideation to publication.',
-    links: {},
-    features: [
-      'Episode workspace with document uploads',
-      'Pipeline stages from ideation to publication',
-      'Team collaboration tools',
-      'AI-assisted episode prep via MCP',
-    ],
-  },
-  thewritar: {
-    title: 'TheWritAr',
-    tagline: 'Blog and newsletter pipeline',
-    description: 'A writing pipeline tool for managing drafts, reviews, tags, publishing stages, and document storage.',
-    status: 'Active',
-    platform: 'Web',
-    year: '2025',
-    category: 'community',
-    color: 'oklch(0.55 0.09 80)',
-    tech: ['Next.js', 'Convex', 'MCP'],
-    story: 'Writing at scale needs structure. TheWritAr manages the full content lifecycle from draft to publication, with AI integration so Claude can create drafts, notes, and move posts through stages.',
-    links: {},
-    features: [
-      'Multi-stage publishing pipeline',
-      'Tag management and organization',
-      'Document storage and versioning',
-      'MCP integration for AI-assisted writing',
-    ],
-  },
 };
 
 const FEATURED_PROJECTS = ['mylokai', 'orttaai', 'gopakd'];
@@ -160,7 +84,6 @@ const FEATURED_PROJECTS = ['mylokai', 'orttaai', 'gopakd'];
 const CATEGORIES = {
   shipped: { label: 'Shipped', description: 'Live products you can use today' },
   building: { label: 'Building', description: 'Active development, shipping soon' },
-  community: { label: 'Community & Nonprofit', description: 'Platforms serving communities' },
 };
 
 Object.assign(window, { PROJECTS, FEATURED_PROJECTS, CATEGORIES });
