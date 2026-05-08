@@ -264,7 +264,7 @@
 }
 
 .single-card {
-  width: min(100%, 660px);
+  width: min(100%, 980px);
   color: var(--text);
 }
 
@@ -280,6 +280,13 @@
   line-height: 1.16;
   letter-spacing: 0;
   color: var(--text);
+}
+
+@media (min-width: 900px) {
+  .single-line {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
 }
 
 .intro-line {
@@ -366,6 +373,14 @@
   z-index: 1;
 }
 
+.brand-icon {
+  position: relative;
+  z-index: 1;
+  width: 58%;
+  height: 58%;
+  fill: currentColor;
+}
+
 .icon-cluster .single-icon:not(:first-child) {
   margin-left: calc(var(--icon-size) * -0.42);
 }
@@ -436,6 +451,7 @@
 .tone-blue { --icon-accent: oklch(0.55 0.15 255); }
 .tone-earth { --icon-accent: oklch(0.52 0.11 34); }
 .tone-paper { --icon-accent: oklch(0.74 0.08 92); color: oklch(0.18 0.02 55); }
+.tone-x { --icon-accent: oklch(0.18 0.02 260); color: white; }
 .tone-github { --icon-accent: oklch(0.24 0.02 260); color: white; }
 .tone-linkedin { --icon-accent: oklch(0.53 0.17 250); color: white; }
 .tone-mail { --icon-accent: oklch(0.62 0.14 150); color: white; }
