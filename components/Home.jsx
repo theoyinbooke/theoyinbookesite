@@ -5,8 +5,9 @@ const SOLUTION_ICONS = {
   orttaai: { label: 'or', tone: 'violet', tilt: 4, spread: 12, tucked: -2 },
   meetumo: { label: 'Me', tone: 'cyan', tilt: -3, spread: 24, tucked: -14 },
   wegosign: { label: 'WS', tone: 'sage', tilt: 5, spread: 36, tucked: -26 },
-  gopakd: { label: 'Go', tone: 'amber', tilt: -5, spread: 48, tucked: -38 },
-  soundar: { label: 'sA', tone: 'blue', tilt: -4, spread: 60, tucked: -50 },
+  pewpad: { label: 'PP', tone: 'paper', tilt: -6, spread: 48, tucked: -38 },
+  gopakd: { label: 'Go', tone: 'amber', tilt: -5, spread: 60, tucked: -50 },
+  soundar: { label: 'sA', tone: 'blue', tilt: -4, spread: 72, tucked: -62 },
 };
 
 const SOCIAL_LINKS = [
@@ -28,6 +29,10 @@ function Home() {
 
   return (
     <main className="single-home" aria-label="Olanrewaju Oyinbooke home">
+      <div className="home-theme-toggle">
+        <ThemeToggle />
+      </div>
+
       <section className="single-card">
         <p className="single-line intro-line">
           Hi, my name is Olanrewaju Oyinbooke

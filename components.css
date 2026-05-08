@@ -113,6 +113,11 @@
   border-color: var(--border-hover);
 }
 
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -252,6 +257,7 @@
 
 /* ─── Single-screen Home ───────────────────── */
 .single-home {
+  position: relative;
   min-height: 100svh;
   display: flex;
   align-items: center;
@@ -261,6 +267,24 @@
     radial-gradient(circle at 18% 20%, oklch(from var(--accent) l c h / 0.12), transparent 26rem),
     radial-gradient(circle at 88% 78%, oklch(from var(--sage) l c h / 0.10), transparent 24rem),
     var(--bg);
+}
+
+.home-theme-toggle {
+  position: fixed;
+  top: clamp(1rem, 3vw, 1.5rem);
+  right: clamp(1rem, 3vw, 1.5rem);
+  z-index: 30;
+  padding: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: oklch(from var(--bg-card) l c h / 0.82);
+  backdrop-filter: blur(16px) saturate(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
+  box-shadow: 0 12px 30px oklch(0 0 0 / 0.12);
+}
+
+.home-theme-toggle .theme-toggle {
+  background: oklch(from var(--bg) l c h / 0.56);
 }
 
 .single-card {
@@ -509,7 +533,7 @@
   .single-home {
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 1.6rem 1.35rem;
+    padding: 5.2rem 1.35rem 1.6rem;
   }
 
   .single-line {

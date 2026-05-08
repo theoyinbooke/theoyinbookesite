@@ -102,19 +102,43 @@ function Nav() {
 }
 
 // ─── Theme Toggle ───────────────────────────
+const THEME_STORAGE_KEY = 'oo-theme';
+const THEME_CHOICE_STORAGE_KEY = 'oo-theme-choice';
+
 function ThemeToggle() {
   const [dark, setDark] = useState(() => {
-    const saved = localStorage.getItem('oo-theme');
-    return saved !== 'light';
+    try {
+      const hasSavedChoice = localStorage.getItem(THEME_CHOICE_STORAGE_KEY) === 'true';
+      return hasSavedChoice && localStorage.getItem(THEME_STORAGE_KEY) === 'dark';
+    } catch {
+      return false;
+    }
   });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-    localStorage.setItem('oo-theme', dark ? 'dark' : 'light');
   }, [dark]);
 
+  const toggleTheme = () => {
+    setDark((current) => {
+      const next = !current;
+      try {
+        localStorage.setItem(THEME_CHOICE_STORAGE_KEY, 'true');
+        localStorage.setItem(THEME_STORAGE_KEY, next ? 'dark' : 'light');
+      } catch {}
+      return next;
+    });
+  };
+
   return (
-    <button className="theme-toggle" onClick={() => setDark(!dark)} aria-label="Toggle theme">
+    <button
+      type="button"
+      className="theme-toggle"
+      onClick={toggleTheme}
+      aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
+      aria-pressed={dark}
+      title={dark ? 'Switch to light theme' : 'Switch to dark theme'}
+    >
       {dark ? (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       ) : (
