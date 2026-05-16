@@ -12,7 +12,7 @@ const PROJECTS = {
     color: 'oklch(0.70 0.12 170)',
     tech: ['Swift 6', 'SwiftUI', 'Apple Foundation Models', 'MLX Swift', 'SwiftData'],
     story: 'Built to prove the privacy-first thesis in a consumer app. Device-aware model tiering (4B on 8GB devices, up to 7B on 12GB) means the experience degrades gracefully instead of crashing. Apple Foundation Models is the default so new users never wait for a download.',
-    links: { appstore: '#' },
+    links: { appstore: 'https://apps.apple.com/us/app/mylokai/id6760079666' },
     features: [
       'Fully on-device inference — no cloud, no accounts',
       'Device-aware model tiering across Apple Silicon',
@@ -31,12 +31,31 @@ const PROJECTS = {
     color: 'oklch(0.55 0.14 280)',
     tech: ['Swift', 'SwiftUI', 'Whisper.cpp', 'Accessibility API', 'Electron/Tauri'],
     story: 'Wispr Flow charges monthly for something your machine can do locally. orttaai runs Whisper on your hardware and injects text directly into whatever app has focus. The Ubuntu port extends this to Linux creators who need the same freedom.',
-    links: { github: '#' },
+    links: { github: 'https://github.com/theoyinbooke/orttaai' },
     features: [
       'Local Whisper inference — zero cloud dependency',
       'Text injection via Accessibility API',
       'Cross-platform: macOS shipped, Ubuntu in progress',
       'No accounts, no subscriptions',
+    ],
+  },
+  thynkora: {
+    title: 'Thynkora',
+    tagline: 'Daily imagination training with AI feedback',
+    description: 'A native iPhone app for strengthening imagination as a measurable skill through short creative challenges, fast AI scoring, and progress tracking across visual, narrative, conceptual, and empathic thinking.',
+    status: 'In Development',
+    platform: 'iPhone',
+    year: '2026',
+    category: 'building',
+    color: 'oklch(0.63 0.16 305)',
+    tech: ['SwiftUI', 'SwiftData', 'CloudKit', 'Sign in with Apple', 'AI scoring'],
+    story: 'Thynkora treats imagination like a skill you can practice. Users complete daily creative prompts, receive structured feedback, and build an imagination profile across multiple dimensions instead of relying on vague inspiration or one-off journaling.',
+    links: { testflight: 'https://testflight.apple.com/join/vM4NwwW8' },
+    features: [
+      'Daily creative challenges across four imagination dimensions',
+      'AI-scored feedback for originality, depth, and quality',
+      'Progress tracking and imagination profile over time',
+      'Private sign-in and lightweight iPhone-first experience',
     ],
   },
   meetumo: {
@@ -78,7 +97,7 @@ const PROJECTS = {
     ],
   },
   pewpad: {
-    title: 'Pewpad',
+    title: 'PewPad',
     tagline: 'Private preaching memory for pastors',
     description: 'An on-device preaching companion for pastors to prepare, deliver, and multiply sermons in their own voice — with the sermon archive kept on iPhone and iPad, never the cloud.',
     status: 'In Development',
@@ -88,12 +107,31 @@ const PROJECTS = {
     color: 'oklch(0.66 0.13 115)',
     tech: ['SwiftUI', 'SwiftData', 'CloudKit', 'SpeechAnalyzer', 'Apple Foundation Models', 'MLX Swift'],
     story: 'Pewpad is built around the preacher\'s week: prepared in the study, delivered from the pulpit, multiplied through follow-up, and remembered across years. It treats each sermon as structured data, keeps Bible references and commentary close to the manuscript, listens privately in Pulpit Mode for spoken references, and uses on-device intelligence to surface archive memory and generate ministry materials without uploading the pastor\'s sermons.',
-    links: { website: 'https://getpewpad.com' },
+    links: { website: 'https://pewpad.ai' },
     features: [
       'Pulpit Mode with manuscript and scripture side by side',
       'Voice-triggered Bible reference loading during delivery',
       'Private sermon memory graph for themes, scripture, and illustrations',
       'Ministry Kit outputs: recap email, discussion guide, and devotional',
+    ],
+  },
+  yaypeng: {
+    title: 'YayPeng',
+    tagline: 'iPad-native photo booth for events',
+    description: 'A clean photo booth app for event operators to capture guest photos, compose branded photo strips, and deliver finished images by email link without bloated subscription tooling.',
+    status: 'In Development',
+    platform: 'iPad',
+    year: '2026',
+    category: 'building',
+    color: 'oklch(0.72 0.15 85)',
+    tech: ['SwiftUI', 'AVFoundation', 'Convex', 'Clerk', 'Resend'],
+    story: 'YayPeng is built for the operator standing beside the booth: set up an event, pick a template, customize the strip, capture with the built-in or external camera, and send guests a share link without fighting a maze of settings.',
+    links: { testflight: 'https://testflight.apple.com/join/4X9TyPCz' },
+    features: [
+      'iPad photo booth capture with built-in or external cameras',
+      'Branded strip templates for weddings, parties, and events',
+      'Guest delivery through email share links',
+      'Simple event-operator workflow without bloated settings',
     ],
   },
   gopakd: {
@@ -136,7 +174,7 @@ const PROJECTS = {
   },
 };
 
-const FEATURED_PROJECTS = ['mylokai', 'orttaai', 'gopakd'];
+const FEATURED_PROJECTS = ['mylokai', 'orttaai', 'thynkora'];
 
 const CATEGORIES = {
   shipped: { label: 'Shipped', description: 'Live products you can use today' },

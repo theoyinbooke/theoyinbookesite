@@ -3,12 +3,14 @@
 const SOLUTION_ICONS = {
   mylokai: { label: 'My', tone: 'warm', tilt: -7, spread: 0, tucked: 10 },
   orttaai: { label: 'or', tone: 'violet', tilt: 4, spread: 12, tucked: -2 },
-  meetumo: { label: 'Me', tone: 'cyan', tilt: -3, spread: 24, tucked: -14 },
-  wegosign: { label: 'WS', tone: 'sage', tilt: 5, spread: 36, tucked: -26 },
-  pewpad: { label: 'PP', tone: 'paper', tilt: -6, spread: 48, tucked: -38 },
-  gopakd: { label: 'Go', tone: 'amber', tilt: -5, spread: 60, tucked: -50 },
+  thynkora: { label: 'Th', tone: 'blue', tilt: -4, spread: 24, tucked: -14 },
+  pewpad: { label: 'PP', tone: 'paper', tilt: -6, spread: 36, tucked: -26 },
+  gopakd: { label: 'Go', tone: 'amber', tilt: -5, spread: 48, tucked: -38 },
+  yaypeng: { label: 'Yp', tone: 'sage', tilt: 6, spread: 60, tucked: -50 },
   soundar: { label: 'sA', tone: 'blue', tilt: -4, spread: 72, tucked: -62 },
 };
+
+const HOMEPAGE_HIDDEN_PROJECTS = ['meetumo', 'wegosign'];
 
 const SOCIAL_LINKS = [
   { label: 'YouTube', icon: 'youtube', href: 'https://youtube.com/@TheOyinbooke', tilt: -5, spread: 0, tucked: 8, tone: 'youtube' },
@@ -19,7 +21,8 @@ const SOCIAL_LINKS = [
 
 function Home() {
   const { navigate } = useRoute();
-  const solutionSlugs = Object.keys(PROJECTS);
+  const solutionSlugs = Object.keys(PROJECTS).filter((slug) => !HOMEPAGE_HIDDEN_PROJECTS.includes(slug));
+  const hiddenSolutionCount = HOMEPAGE_HIDDEN_PROJECTS.filter((slug) => PROJECTS[slug]).length;
 
   const openProject = (event, slug) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -27,12 +30,14 @@ function Home() {
     navigate('work', slug);
   };
 
+  const openWork = (event) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    navigate('work');
+  };
+
   return (
     <main className="single-home" aria-label="Olanrewaju Oyinbooke home">
-      <div className="home-theme-toggle">
-        <ThemeToggle />
-      </div>
-
       <section className="single-card">
         <p className="single-line intro-line">
           Hi, my name is Olanrewaju Oyinbooke
@@ -51,6 +56,9 @@ function Home() {
                 onOpen={openProject}
               />
             ))}
+            {hiddenSolutionCount > 0 && (
+              <MoreProjectsIcon count={hiddenSolutionCount} onOpen={openWork} />
+            )}
           </IconCluster>
         </p>
 
@@ -81,6 +89,7 @@ function Home() {
           <a href="#work" onClick={(event) => { event.preventDefault(); navigate('work'); }}>All work</a>
           <a href="#writing" onClick={(event) => { event.preventDefault(); navigate('writing'); }}>Writing</a>
           <a href="#speaking" onClick={(event) => { event.preventDefault(); navigate('speaking'); }}>Speaking</a>
+          <ThemeToggle className="theme-toggle-inline" />
         </div>
       </section>
     </main>
@@ -92,6 +101,25 @@ function IconCluster({ label, children }) {
     <span className="icon-cluster" role="group" aria-label={label}>
       {children}
     </span>
+  );
+}
+
+function MoreProjectsIcon({ count, onOpen }) {
+  return (
+    <a
+      className="single-icon solution-icon more-projects-icon"
+      href="#work"
+      onClick={onOpen}
+      aria-label={`${count} more apps`}
+      style={{
+        '--tilt': '5deg',
+        '--spread': '60px',
+        '--tucked': '-50px',
+      }}
+    >
+      <span>+{count}</span>
+      <span className="icon-tooltip">{count} more apps</span>
+    </a>
   );
 }
 

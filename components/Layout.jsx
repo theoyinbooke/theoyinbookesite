@@ -105,7 +105,7 @@ function Nav() {
 const THEME_STORAGE_KEY = 'oo-theme';
 const THEME_CHOICE_STORAGE_KEY = 'oo-theme-choice';
 
-function ThemeToggle() {
+function ThemeToggle({ className = '' } = {}) {
   const [dark, setDark] = useState(() => {
     try {
       const hasSavedChoice = localStorage.getItem(THEME_CHOICE_STORAGE_KEY) === 'true';
@@ -133,7 +133,7 @@ function ThemeToggle() {
   return (
     <button
       type="button"
-      className="theme-toggle"
+      className={`theme-toggle ${className}`.trim()}
       onClick={toggleTheme}
       aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
       aria-pressed={dark}

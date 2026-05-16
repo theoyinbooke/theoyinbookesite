@@ -195,7 +195,7 @@ function ProjectDetail({ slug }) {
                     <span className="mono" style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: 10 }}>Links</span>
                     {Object.entries(project.links).map(([type, url]) => (
                       <a key={type} href={url} target="_blank" rel="noopener" className="sidebar-link">
-                        {type === 'appstore' ? 'App Store' : type === 'github' ? 'GitHub' : type === 'website' ? 'Website' : type}
+                        {type === 'appstore' ? 'App Store' : type === 'github' ? 'GitHub' : type === 'website' ? 'Website' : type === 'testflight' ? 'TestFlight' : type}
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                       </a>
                     ))}
