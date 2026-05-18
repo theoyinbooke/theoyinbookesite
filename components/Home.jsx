@@ -4,10 +4,11 @@ const SOLUTION_ICONS = {
   mylokai: { label: 'My', tone: 'warm', tilt: -7, spread: 0, tucked: 10 },
   orttaai: { label: 'or', tone: 'violet', tilt: 4, spread: 12, tucked: -2 },
   thynkora: { label: 'Th', tone: 'blue', tilt: -4, spread: 24, tucked: -14 },
-  pewpad: { label: 'PP', tone: 'paper', tilt: -6, spread: 36, tucked: -26 },
-  gopakd: { label: 'Go', tone: 'amber', tilt: -5, spread: 48, tucked: -38 },
-  yaypeng: { label: 'Yp', tone: 'sage', tilt: 6, spread: 60, tucked: -50 },
-  soundar: { label: 'sA', tone: 'blue', tilt: -4, spread: 72, tucked: -62 },
+  kulosar: { label: 'Ku', tone: 'warm', tilt: 5, spread: 36, tucked: -26 },
+  pewpad: { label: 'PP', tone: 'paper', tilt: -6, spread: 48, tucked: -38 },
+  gopakd: { label: 'Go', tone: 'amber', tilt: -5, spread: 60, tucked: -50 },
+  yaypeng: { label: 'Yp', tone: 'sage', tilt: 6, spread: 72, tucked: -62 },
+  soundar: { label: 'sA', tone: 'blue', tilt: -4, spread: 84, tucked: -74 },
 };
 
 const HOMEPAGE_HIDDEN_PROJECTS = ['meetumo', 'wegosign'];
@@ -57,7 +58,7 @@ function Home() {
               />
             ))}
             {hiddenSolutionCount > 0 && (
-              <MoreProjectsIcon count={hiddenSolutionCount} onOpen={openWork} />
+              <MoreProjectsIcon count={hiddenSolutionCount} offset={solutionSlugs.length} onOpen={openWork} />
             )}
           </IconCluster>
         </p>
@@ -104,7 +105,8 @@ function IconCluster({ label, children }) {
   );
 }
 
-function MoreProjectsIcon({ count, onOpen }) {
+function MoreProjectsIcon({ count, offset, onOpen }) {
+  const spread = offset * 12;
   return (
     <a
       className="single-icon solution-icon more-projects-icon"
@@ -113,8 +115,8 @@ function MoreProjectsIcon({ count, onOpen }) {
       aria-label={`${count} more apps`}
       style={{
         '--tilt': '5deg',
-        '--spread': '60px',
-        '--tucked': '-50px',
+        '--spread': `${spread}px`,
+        '--tucked': `${8 - spread}px`,
       }}
     >
       <span>+{count}</span>
