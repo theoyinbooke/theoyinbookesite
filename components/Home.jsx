@@ -11,7 +11,7 @@ const SOLUTION_ICONS = {
   soundar: { label: 'sA', tone: 'blue', tilt: -4, spread: 84, tucked: -74 },
 };
 
-const HOMEPAGE_HIDDEN_PROJECTS = ['meetumo', 'wegosign'];
+const HOMEPAGE_HIDDEN_PROJECTS = ['meetumo', 'wegosign', 'apotiowomi'];
 
 const SOCIAL_LINKS = [
   { label: 'YouTube', icon: 'youtube', href: 'https://youtube.com/@TheOyinbooke', tilt: -5, spread: 0, tucked: 8, tone: 'youtube' },
