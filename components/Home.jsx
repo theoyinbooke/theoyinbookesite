@@ -9,6 +9,8 @@ const SOLUTION_ICONS = {
   gopakd: { label: 'Go', tone: 'amber', tilt: -5, spread: 60, tucked: -50 },
   yaypeng: { label: 'Yp', tone: 'sage', tilt: 6, spread: 72, tucked: -62 },
   soundar: { label: 'sA', tone: 'blue', tilt: -4, spread: 84, tucked: -74 },
+  basicarly: { label: 'BA', tone: 'violet', tilt: 5, spread: 96, tucked: -86 },
+  saffev: { label: 'Sf', tone: 'sage', tilt: -5, spread: 108, tucked: -98 },
 };
 
 const HOMEPAGE_HIDDEN_PROJECTS = ['meetumo', 'wegosign', 'apotiowomi'];
