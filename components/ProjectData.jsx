@@ -97,7 +97,7 @@ const PROJECTS = {
     },
     features: [
       'Event ticketing and registration',
-      'Attendee engagement and networking in the mobile app',
+      'Attendee engagement, networking, and Bluetooth Nearby Mode',
       'QR code check-in for event operations',
       'Sponsor, exhibitor, and ROI reporting',
     ],
