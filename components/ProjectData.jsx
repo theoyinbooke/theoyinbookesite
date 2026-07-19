@@ -136,7 +136,7 @@ const PROJECTS = {
     features: [
       'Transactional and marketing email in one self-hosted stack',
       'API keys, verified sending domains, and delivery webhooks',
-      'Contacts, lists, segments, and resumable campaigns',
+      'Visual email studio with branded starters and personalization',
       'Bounce and complaint suppression with reputation guardrails',
     ],
   },
