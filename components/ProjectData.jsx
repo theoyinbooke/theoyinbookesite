@@ -134,7 +134,7 @@ const PROJECTS = {
     story: 'Product email usually splits into one system for transactional messages, another for campaigns, and a pile of glue for contacts, webhooks, and delivery health. eimailar brings that work into a self-hosted stack with an API-first sending layer and an operations-focused dashboard.',
     links: { website: 'https://app.eimailar.com/' },
     features: [
-      'Transactional and marketing email in one self-hosted stack',
+      'Hosted and embeddable subscriber forms with custom questions',
       'API keys, verified sending domains, and delivery webhooks',
       'Visual email studio with branded starters and personalization',
       'Bounce and complaint suppression with reputation guardrails',
