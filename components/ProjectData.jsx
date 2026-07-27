@@ -55,9 +55,10 @@ const PROJECTS = {
     story: 'Most social-video workflows start by uploading source footage to a cloud service. Reelmify keeps source files, projects, edits, and transcription on the Mac while providing focused workflows for generating clips from long-form video or directly editing short portrait content.',
     links: { website: 'https://reelmify.theoyinbooke.com/' },
     features: [
-      'Long-form clip generation and short-form Portrait Studio',
+      'Editable transcripts that preserve caption timing and keyword highlights',
+      'Subject-aware portrait reframing for landscape and multi-speaker footage',
+      'Quality-gated two-, three-, and five-part connected series',
       'On-device transcription with local project storage',
-      'Caption, layout, brand, audio, and timeline editing',
       'Configurable data storage on the Mac or an external drive',
       'CLI, MCP, and companion API for agent-controlled workflows',
     ],
