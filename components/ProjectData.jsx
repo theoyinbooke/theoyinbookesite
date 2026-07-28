@@ -58,7 +58,7 @@ const PROJECTS = {
       'Editable transcripts that preserve caption timing and keyword highlights',
       'Subject-aware portrait reframing for landscape and multi-speaker footage',
       'Quality-gated two-, three-, and five-part connected series',
-      'On-device transcription with local project storage',
+      'Aligned clip starts that preserve opening words and caption timing',
       'Configurable data storage on the Mac or an external drive',
       'CLI, MCP, and companion API for agent-controlled workflows',
     ],
