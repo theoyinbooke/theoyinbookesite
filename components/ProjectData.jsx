@@ -38,6 +38,7 @@ const PROJECTS = {
     features: [
       'Local speech recognition with zero cloud dependency',
       'Push-to-talk dictation with spoken line-break commands',
+      'App-aware delivery with live words where safe and one finalized transcript in Codex',
       'Quantized Whisper models with downloads up to 5x smaller',
       'Installable releases for macOS, Linux, and Windows',
     ],
