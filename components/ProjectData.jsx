@@ -39,6 +39,7 @@ const PROJECTS = {
       'Local speech recognition with zero cloud dependency',
       'Push-to-talk dictation with spoken line-break commands',
       'Fast, complete dictation from one authoritative recording and finalized transcript',
+      'Clipboard-safe delivery that preserves newer Universal Clipboard content',
       'Quantized Whisper models with downloads up to 5x smaller',
       'Installable releases for macOS, Linux, and Windows',
     ],
