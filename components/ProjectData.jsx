@@ -87,9 +87,9 @@ const PROJECTS = {
   kulosar: {
     title: 'KulosAr',
     tagline: 'AI companion for meaningful relationships',
-    description: 'An iPhone app for nurturing meaningful connections through voice and text journaling, relationship insights, personalized messages, and daily briefings that help users stay present with the people who matter most.',
+    description: 'A mobile app for nurturing meaningful connections through voice and text journaling, relationship insights, personalized messages, and daily briefings that help users stay present with the people who matter most.',
     status: 'In Development',
-    platform: 'iPhone',
+    platform: 'iPhone / iPad / Android',
     year: '2026',
     category: 'building',
     color: 'oklch(0.68 0.15 25)',
