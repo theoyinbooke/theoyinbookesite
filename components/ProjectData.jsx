@@ -309,6 +309,7 @@ const PROJECTS = {
     features: [
       'Local voice generation and cloning with open-source speech models',
       'Linux Video Studio with local media workflows, captions, timelines, and portrait export',
+      'Performed shows with voice personas, vocal cues, timed episodes, and release quality gates',
       'Integrated chat assistant with inline plans, activity, and generated media',
       'Side-by-side model comparison and GPU benchmark suite',
       'Durable batch jobs with pause, resume, retry, and cancellation',
