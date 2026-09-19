@@ -14,6 +14,7 @@ const SOLUTION_ICONS = {
 };
 
 const HOMEPAGE_HIDDEN_PROJECTS = ['meetumo', 'wegosign', 'apotiowomi'];
+const HOMEPAGE_PRODUCT_LIMIT = 5;
 
 const SOCIAL_LINKS = [
   { label: 'YouTube', icon: 'youtube', href: 'https://youtube.com/@TheOyinbooke', tilt: -5, spread: 0, tucked: 8, tone: 'youtube' },
@@ -24,8 +25,11 @@ const SOCIAL_LINKS = [
 
 function Home() {
   const { navigate } = useRoute();
-  const solutionSlugs = Object.keys(PROJECTS).filter((slug) => !HOMEPAGE_HIDDEN_PROJECTS.includes(slug));
-  const hiddenSolutionCount = HOMEPAGE_HIDDEN_PROJECTS.filter((slug) => PROJECTS[slug]).length;
+  const publicProjectSlugs = Object.keys(PROJECTS);
+  const solutionSlugs = publicProjectSlugs
+    .filter((slug) => !HOMEPAGE_HIDDEN_PROJECTS.includes(slug))
+    .slice(0, HOMEPAGE_PRODUCT_LIMIT);
+  const remainingProjectCount = publicProjectSlugs.length - solutionSlugs.length;
 
   const openProject = (event, slug) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -59,8 +63,8 @@ function Home() {
                 onOpen={openProject}
               />
             ))}
-            {hiddenSolutionCount > 0 && (
-              <MoreProjectsIcon count={hiddenSolutionCount} offset={solutionSlugs.length} onOpen={openWork} />
+            {remainingProjectCount > 0 && (
+              <MoreProjectsIcon count={remainingProjectCount} offset={solutionSlugs.length} onOpen={openWork} />
             )}
           </IconCluster>
         </p>
@@ -114,7 +118,7 @@ function MoreProjectsIcon({ count, offset, onOpen }) {
       className="single-icon solution-icon more-projects-icon"
       href="#work"
       onClick={onOpen}
-      aria-label={`${count} more apps`}
+      aria-label={`${count} more projects`}
       style={{
         '--tilt': '5deg',
         '--spread': `${spread}px`,
@@ -122,7 +126,7 @@ function MoreProjectsIcon({ count, offset, onOpen }) {
       }}
     >
       <span>+{count}</span>
-      <span className="icon-tooltip">{count} more apps</span>
+      <span className="icon-tooltip">{count} more projects</span>
     </a>
   );
 }
