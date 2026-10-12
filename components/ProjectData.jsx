@@ -300,8 +300,8 @@ const PROJECTS = {
     ],
   },
   apotiowomi: {
-    title: 'Apotiowo Mi',
-    tagline: 'Private budgeting with fast list-style logging',
+    title: 'MoneyTempo',
+    tagline: 'Plan money. Stay on track.',
     description: 'A native iPhone and iPad budgeting app for planning monthly budgets, splitting categories into practical line items, and logging income or spending from simple typed lists.',
     status: 'Shipped',
     platform: 'iPhone / iPad',
@@ -309,10 +309,10 @@ const PROJECTS = {
     category: 'shipped',
     color: 'oklch(0.64 0.14 315)',
     tech: ['SwiftUI', 'SwiftData', 'CloudKit', 'Sign in with Apple', 'VisionKit', 'Charts'],
-    story: 'Apotiowo Mi is built for people who want budget tracking without turning their financial life into admin work. Users plan a budget by category, add line items under each category, and then log transactions by typing spending or income like a quick list. The app reviews parsed entries before anything is saved, keeps data on-device, and syncs only through the user\'s private iCloud when available.',
+    story: 'MoneyTempo is built for people who want budget tracking without turning their financial life into admin work. Users plan a budget by category, add line items under each category, and then log transactions by typing spending or income like a quick list. The app reviews parsed entries before anything is saved, keeps data on-device, and syncs only through the user\'s private iCloud when available.',
     links: {
-      website: 'https://apotiowomi.vercel.app/',
-      appstore: 'https://apps.apple.com/us/app/apotiowo-mi/id6774993384',
+      website: 'https://moneytempo.theoyinbooke.com/',
+      appstore: 'https://apps.apple.com/us/app/moneytempo/id6774993384',
     },
     features: [
       'Monthly budgets with category and item-level planning',
