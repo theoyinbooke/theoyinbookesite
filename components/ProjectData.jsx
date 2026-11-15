@@ -47,6 +47,8 @@ const PROJECTS = {
       'Express Neural Engine dictation with Word Boost and local Text Polish',
       'Local Chat, Insights, Memory Graph, and Polish through Ollama or LM Studio',
       'Encrypted, incremental iCloud sync with Orttakey dictations on iPhone and iPad',
+      'Orttaai Link connects Windows and Linux PCs plus Android phones through a Mac hub',
+      'Voice editing for selected text and recent dictations with careful fallback when no local model is running',
       'Milestones with shareable, numbers-only progress cards',
       'Selectable model storage on external drives with compatible-model reuse',
       'Semantic Memory Graph with local activity summaries, themes, and related transcript chunks',
